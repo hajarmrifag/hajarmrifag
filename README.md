@@ -1,10 +1,23 @@
 # Hi, I'm Hajar 👋
 
-I'm a final-year **Software Engineering student at Sichuan University** building backend, distributed, data-intensive, and performance-oriented software systems.
+I'm a final-year **Software Engineering student at Sichuan University**, expecting to graduate in **2027**, building backend, distributed, data-intensive, and performance-oriented software systems.
 
 I enjoy working on problems that go beyond basic CRUD: API design, authentication and authorization, database performance, distributed data processing, containerization, CI/CD, testing, and low-level performance optimization.
 
 My recent work spans **Python/FastAPI, C#/.NET, PostgreSQL, SQL Server, Docker, Hadoop/Spark, and CUDA C++**.
+
+I am especially interested in financial-technology engineering: reliable services, market and customer data, risk-aware decision support, and the controls that make software trustworthy in regulated environments.
+
+## Engineering Evidence at a Glance
+
+| Capability | Evidence |
+|---|---|
+| Production delivery | Live full-stack Claims deployment, multi-stage Docker build, health checks, structured logging, CI/CD, SAST and DAST |
+| Backend engineering | ASP.NET Core claims platform and FastAPI transaction service with authentication, authorization, pagination and atomic transfers |
+| Data engineering | 15M-record Hadoop/Hive/PySpark team project and a reproducible PostgreSQL analytics pipeline over 891K synthetic transactions |
+| Data and AI | Leakage-aware temporal ML validation, explainable risk segmentation, evidence retrieval and scenario analysis |
+| Reliability and integrity | Integration and browser tests, idempotency, rollback/concurrency tests, audit histories, threat modelling and explicit model limitations |
+| Performance engineering | CUDA kernels benchmarked against CPU references and cuBLAS, with Nsight-guided optimization |
 
 ---
 
