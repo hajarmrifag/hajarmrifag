@@ -4,7 +4,7 @@ I'm a final-year **Software Engineering student at Sichuan University**, expecti
 
 I enjoy working on problems that go beyond basic CRUD: API design, authentication and authorization, database performance, distributed data processing, containerization, CI/CD, testing, and low-level performance optimization.
 
-My recent work spans **Python/FastAPI, C#/.NET, PostgreSQL, SQL Server, Docker, Hadoop/Spark, and CUDA C++**.
+My recent work spans **Python/FastAPI, React/TypeScript, C#/.NET, PostgreSQL, Docker, AWS EC2, Hadoop/Spark, and CUDA C++**.
 
 I am especially interested in financial-technology engineering: reliable services, market and customer data, risk-aware decision support, and the controls that make software trustworthy in regulated environments.
 
@@ -23,26 +23,26 @@ I am especially interested in financial-technology engineering: reliable service
 
 ## Featured Engineering Projects
 
-### 🛡️ Claims Management API
-**C# · ASP.NET Core · Entity Framework Core · SQL Server · JWT · GitHub Actions · Azure Blob Storage**
+### 🛡️ Claims Management Platform
+**React · TypeScript · C# · ASP.NET Core · PostgreSQL · Docker · GitHub Actions**
 
-[View repository](https://github.com/hajarmrifag/claims-management-api)
+[View repository](https://github.com/hajarmrifag/claims-management-api) · [Live application](https://claims-management-ync9.onrender.com)
 
-A production-style insurance claims backend designed around layered architecture and clear separation of concerns.
+A deployed full-stack insurance claims platform with a responsive React client, layered ASP.NET Core API, role-based workflows, persistent data, automated tests, and security controls.
 
 **Engineering highlights:**
+- Built a React and TypeScript interface with protected routes, typed form validation, server-state caching, filtering, pagination, and responsive layouts
 - Built a multi-layer .NET architecture across Domain, Application, Infrastructure, and API projects
 - Implemented JWT authentication with secure password hashing
 - Added role-based authorization for Adjuster, Manager, and Admin workflows
 - Designed auditable claim status transitions and claim history
-- Added authenticated document upload and download
+- Added authenticated document upload and download with size, type, filename, and magic-byte validation
 - Abstracted file storage to support both local storage and Azure Blob Storage
-- Added centralized exception handling and structured request logging
-- Implemented EF Core migrations, relationships, unique constraints, and query-oriented indexes
-- Added unit and end-to-end HTTP integration tests
-- Automated restore, build, and test validation with GitHub Actions
+- Deployed a multi-stage Docker image with PostgreSQL and health checks on Render
+- Added unit, integration, component, and Playwright browser tests
+- Automated frontend and backend validation plus CodeQL, Trivy, Dependabot, and OWASP ZAP security checks
 
-This project focuses on backend architecture, security, persistence, testing, observability, and maintainable service boundaries.
+This project demonstrates complete product delivery across frontend state and forms, API design, security, persistence, testing, observability, containerization, and CI/CD.
 
 ---
 
@@ -175,7 +175,10 @@ FinSight turns the underlying research pipeline into an application that non-tec
 ## Technologies
 
 ### Languages
-`Python` · `C#` · `C++` · `SQL` · `JavaScript` · `Bash`
+`Python` · `TypeScript` · `C#` · `C++` · `SQL` · `JavaScript` · `Bash`
+
+### Frontend
+`React` · `TanStack Query` · `React Hook Form` · `Zod` · `Playwright`
 
 ### Backend & APIs
 `FastAPI` · `ASP.NET Core` · `Entity Framework Core` · `REST APIs`
@@ -184,7 +187,7 @@ FinSight turns the underlying research pipeline into an application that non-tec
 `PostgreSQL` · `SQL Server` · `SQLite` · `Hadoop HDFS` · `Apache Hive` · `PySpark`
 
 ### Infrastructure & Engineering
-`Docker` · `Docker Compose` · `GitHub Actions` · `CI/CD` · `Git` · `Linux/macOS`
+`AWS EC2` · `Docker` · `Docker Compose` · `GitHub Actions` · `CI/CD` · `Git` · `Linux/macOS`
 
 ### Data & Machine Learning
 `pandas` · `NumPy` · `scikit-learn` · `Streamlit`
