@@ -6,7 +6,7 @@ I enjoy working on problems that go beyond basic CRUD: API design, authenticatio
 
 My recent work spans **Python/FastAPI, React/TypeScript, C#/.NET, PostgreSQL, Docker, AWS EC2, Hadoop/Spark, and CUDA C++**.
 
-I am especially interested in financial-technology engineering: reliable services, market and customer data, risk-aware decision support, and the controls that make software trustworthy in regulated environments.
+I am particularly interested in data-intensive decision systems across financial technology, infrastructure, and energy, especially where reliability, optimisation, and trustworthy software matter.
 
 ## Engineering Evidence at a Glance
 
@@ -43,6 +43,22 @@ A deployed full-stack insurance claims platform with a responsive React client, 
 - Automated frontend and backend validation plus CodeQL, Trivy, Dependabot, and OWASP ZAP security checks
 
 This project demonstrates complete product delivery across frontend state and forms, API design, security, persistence, testing, observability, containerization, and CI/CD.
+
+---
+
+### ⚡ GridFlex AI: Renewable Power Systems
+**Python · Optimisation (LP) · Energy Storage · Demand Flexibility · Streamlit · pytest · GitHub Actions**
+
+[View repository](https://github.com/hajarmrifag/gridflex-ai)
+
+A battery-dispatch and demand-flexibility simulator for high-renewables grids, with a Morocco (Tétouan) and Germany case study built on public data. The README reports results from a systematic experiment matrix rather than only describing the tool.
+
+**Highlights:**
+- Physically constrained battery model (state of charge, power limits, round-trip losses) and energy-conserving daily demand shifting
+- Perfect-foresight LP benchmark showing a simple threshold rule captures 0.6% peak reduction where 6.7% is achievable (Tétouan, 4 h battery)
+- In Tétouan, 5% demand flexibility avoided about as much curtailment as a 4 h battery and cut peak demand 5.0% vs 0.6%
+- Found that greedy load shifting above ~10% flexibility creates a rebound peak in the Germany profile
+- Clear separation of measured vs estimated data, with limitations stated
 
 ---
 
