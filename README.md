@@ -49,7 +49,7 @@ This project demonstrates complete product delivery across frontend state and fo
 ### ⚡ GridFlex AI: Renewable Power Systems
 **Python · Optimisation (LP) · Energy Storage · Demand Flexibility · Streamlit · pytest · GitHub Actions**
 
-[View repository](https://github.com/hajarmrifag/gridflex-ai)
+[View repository](https://github.com/hajarmrifag/gridflex-ai) · [Live application](https://gridflex-energy-sim.streamlit.app/)
 
 A battery-dispatch and demand-flexibility simulator for high-renewables grids, with a Morocco (Tétouan) and Germany case study built on public data. The README reports results from a systematic experiment matrix rather than only describing the tool.
 
