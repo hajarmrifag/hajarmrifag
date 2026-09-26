@@ -54,7 +54,7 @@ A FastAPI/PostgreSQL transaction service with atomic transfers, idempotent retri
 
 | Project | Focus |
 | --- | --- |
-| [SkyQuery](https://github.com/maryamibaaichou/Flight-Ticket-Meta-Search-and-Analysis) | University team project over 15M Expedia flight records. My role: backend and data engineering with FastAPI, HDFS, Hive and PySpark. |
+| [SkyQuery](https://github.com/maryamibaaichou/Flight-Ticket-Meta-Search-and-Analysis) | Internship project over 15M Expedia flight records. My role: backend and data engineering with FastAPI, HDFS, Hive and PySpark. |
 | [Churn & Reactivation Engine](https://github.com/hajarmrifag/churn-reactivation-engine) | Historical banking transaction research with temporal features, purged evaluation and customer-risk segmentation. |
 | [FinSight](https://github.com/hajarmrifag/finsight-streamlit) | An interface for exploring the banking research, evidence search and campaign scenarios. |
 
