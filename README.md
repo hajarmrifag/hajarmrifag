@@ -1,51 +1,49 @@
-# Hajar Mrifag
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/header-mobile.svg">
+  <img src="assets/header.svg" width="960" alt="Hajar Mrifag. Backend systems and measured performance. Software engineering, class of 2027.">
+</picture>
 
-Final-year **Software Engineering student at Sichuan University**, graduating in **June 2027** and planning to relocate to London. My interests are backend systems, algorithms and performance engineering.
+I build matching logic, GPU kernels and the applications around them. Final-year **Software Engineering at Sichuan University**, graduating **June 2027**, based in Chengdu and planning to relocate to London.
 
-[Portfolio and case studies](https://hajarmrifag.github.io/) · [LinkedIn](https://www.linkedin.com/in/hajar-mrifag-a7903334b/)
+**[Portfolio & case studies](https://hajarmrifag.github.io/)** · [LinkedIn](https://www.linkedin.com/in/hajar-mrifag-a7903334b/) · [CV](https://hajarmrifag.github.io/assets/Hajar-Mrifag-CV.pdf)
 
-My degree includes Java/OOP, data structures, operating systems, architecture, networking and distributed systems. My projects also use C++/CUDA, Python, SQL, C# and TypeScript. I focus on clear constraints, tested behaviour and measurements with explicit limits.
+## Start with the engineering
 
-## Selected engineering work
+### [Java Order Book](https://github.com/hajarmrifag/java-order-book)
+<sub>JAVA 21 · ALGORITHMS · JVM</sub>
 
-### CUDA Transformer Kernels — profiling and memory locality
+Price-time matching with integer ticks, FIFO queues and cancellation without scanning a price level. **60,000 generated commands** checked against an independent reference model. One writer owns the state; JMH exposes batch timing and allocation costs.
 
-[Source and recorded results](https://github.com/hajarmrifag/cuda-transformer-kernels)
+[Design](https://github.com/hajarmrifag/java-order-book/blob/main/docs/design.md) · [Tests](https://github.com/hajarmrifag/java-order-book/tree/main/src/test/java/dev/hajar/orderbook) · [Measured results](https://github.com/hajarmrifag/java-order-book/blob/main/benchmarks/RESULTS.md)
 
-FP32 GEMM and row-wise Softmax implementations with shared-memory/register tiling and alternative reductions. A historical Tesla T4 run recorded **1.28 TFLOPS at 1024 × 1024**, 3.31× a naive kernel and 24% of cuBLAS. Register caching recorded 1.71× baseline Softmax throughput at width 2048; the slower warp-shuffle experiment remains documented.
+### [CUDA Transformer Kernels](https://github.com/hajarmrifag/cuda-transformer-kernels)
+<sub>C++17 · CUDA · NSIGHT COMPUTE</sub>
 
-Finite-output comparisons, explicit width contracts and CPU regressions improve validation. GPU-specific regression tests are provided separately; the latest validation changes have not been rerun on a GPU. Kernel measurements exclude application/network overhead.
+**1.28 TFLOPS FP32 GEMM** on a Tesla T4 at 1024 × 1024, about **3.32×** the naive kernel and **24% of cuBLAS**. Register-cached Softmax beat the warp-shuffle experiment at width 2048. The slower experiment stays in the repo because the comparison matters.
 
-### Java Order Book — algorithms and JVM measurement
+[Results](https://github.com/hajarmrifag/cuda-transformer-kernels/tree/main/results) · [Optimization decisions](https://github.com/hajarmrifag/cuda-transformer-kernels/blob/main/docs/optimization.md) · [Validation limits](https://github.com/hajarmrifag/cuda-transformer-kernels/blob/main/docs/validation.md)
 
-[Source, tests and benchmarks](https://github.com/hajarmrifag/java-order-book)
+## From the engine to the product
 
-A compact Java 21 single-writer limit-order matching engine: integer ticks, price-time priority, cancellation and deterministic full/partial fills. Tests compare 60,000 generated commands against an independent list-based reference model. JMH records throughput, sampled batch durations and allocation with explicit warm-up/forks. This is an educational simulation, not production exchange infrastructure.
+**[GridFlex](https://github.com/hajarmrifag/gridflex-ai)** · React / TypeScript / FastAPI / NumPy<br>
+An energy simulation workspace with physical constraints, dispatch replay and scenario comparison. Removing repeated pandas indexing cut a recorded 60-day pipeline from **71.731 to 2.246 ms**. [Case study](https://hajarmrifag.github.io/work/gridflex.html) · [Live app](https://gridflex.onrender.com/) · [Benchmark](https://github.com/hajarmrifag/gridflex-ai/tree/main/benchmarks)
 
-### GridFlex — numerical correctness and optimization
+**[Neobank](https://github.com/hajarmrifag/neobank-growth-analytics)** · Python / PostgreSQL / SQL<br>
+Atomic transfers, ordered account locks and serialized retry keys, checked with real-database concurrency and rollback tests. A separate analytics pipeline explores **891,772 synthetic transactions**. [Transaction design](https://github.com/hajarmrifag/neobank-growth-analytics/blob/main/docs/banking-api.md) · [Dashboard](https://neobank-growth-analytics-hajar.streamlit.app/)
 
-[Application](https://gridflex.onrender.com/) · [Case study](https://hajarmrifag.github.io/work/gridflex.html) · [Source](https://github.com/hajarmrifag/gridflex-ai)
+**[Aegis Claims](https://github.com/hajarmrifag/claims-management-api)** · C# / ASP.NET Core / React<br>
+A claims workflow with API-enforced roles, status history and validated uploads. Layered services make business rules testable; a documented threat model makes remaining risks inspectable. [Security assessment](https://github.com/hajarmrifag/claims-management-api/blob/main/docs/security/assessment-report.md) · [Live app](https://claims-management-ync9.onrender.com/)
 
-A React/FastAPI workspace around an energy-simulation engine, with **91 Python tests**, numerical invariants, bounded computation and browser/container CI. Removing repeated pandas indexing produced a historical **31.9×** improvement in a 60-day shift-and-battery workload, with identical outputs in the compared case. That is an engine measurement, not whole-app latency. Benchmark records now retain raw samples, randomized paired order and source/environment metadata.
+<sub>Performance figures describe recorded workloads, not whole-app latency. CUDA's latest validation changes await a GPU rerun. Free-hosted demos may need time to wake.</sub>
 
-### Neobank Transaction API — concurrency and reliability
+## Beyond solo projects
 
-[Source and transaction design](https://github.com/hajarmrifag/neobank-growth-analytics)
+**Data & AI Engineering Intern, Chengdu Suncaper Data · March–April 2026**<br>
+Backend and data engineering in the two-person [SkyQuery project](https://hajarmrifag.github.io/work/skyquery.html): PySpark/HDFS/Hive analysis over a documented 15M flight records, plus a separate FastAPI/SQLite query prototype. My teammate owned the frontend and contributed analysis.
 
-Simulated PostgreSQL transfers with integer money, atomic debit/credit, consistent account-lock order and idempotency-key serialization. **37 local tests** cover analytics plus real-database API behaviour, including concurrent spending, retry conflicts and injected-failure rollback. Query-plan measurements remain explicitly database-only. The separate analytics dataset contains 891,772 synthetic transactions.
+**[Sourced](https://github.com/hajarmrifag/opportunity-compass) · BUILD ACROSS Hackathon, Hong Kong · October 2026**<br>
+My contribution connected search, comparison and application follow-through, keeping missing evidence visible and user actions explicit. The README separates my work from teammates' responsibilities.
 
-### Aegis Claims — layered backend and authorization
+Also exploring [retrieval evaluation with PolicyLens](https://github.com/hajarmrifag/policylens-ai) and [temporal banking research](https://github.com/hajarmrifag/churn-reactivation-engine).
 
-[Application](https://claims-management-ync9.onrender.com) · [Source](https://github.com/hajarmrifag/claims-management-api)
-
-React/ASP.NET Core application with JWT authentication, API-enforced roles, status-history records and validated uploads. **22 local backend tests** cover domain/application rules, HTTP flows and real PostgreSQL constraints/rollback. Defined-status validation is distinct from a lifecycle state machine. Deployment and authorization limitations remain documented.
-
-## Team experience
-
-[SkyQuery internship project](https://github.com/maryamibaaichou/Flight-Ticket-Meta-Search-and-Analysis/tree/master): backend/data engineering in a two-person project documented around 15 million Expedia records. The PySpark/HDFS/Hive batch workflow is separate from the FastAPI/SQLite conversational prototype. My teammate owned the frontend and contributed analysis.
-
-[Churn & Reactivation Engine](https://github.com/hajarmrifag/churn-reactivation-engine) and [FinSight](https://github.com/hajarmrifag/finsight-streamlit) contain additional work on temporal banking research and its evidence-review interface.
-
-Based in Chengdu, China · Seeking graduate software engineering roles for 2027.
-
-*Free-hosted demonstrations may take time to wake. Source, tests and benchmark conditions are the primary engineering evidence.*
+My foundation is Java/OOP, data structures, operating systems, architecture, networking and distributed systems. I enjoy moving between a usable interface and the constraints underneath it.
