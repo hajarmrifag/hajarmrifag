@@ -1,49 +1,86 @@
 <picture>
-  <source media="(max-width: 600px)" srcset="assets/header-mobile.svg">
-  <img src="assets/header.svg" width="960" alt="Hajar Mrifag. Backend systems and measured performance. Software engineering, class of 2027.">
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/header-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="assets/header-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <img src="assets/header-light.svg" width="960" alt="Hajar Mrifag — AI, systems and product engineering. Sichuan University, Software Engineering, graduating June 2027. Chengdu, China.">
 </picture>
 
-I build matching logic, GPU kernels and the applications around them. Final-year **Software Engineering at Sichuan University**, graduating **June 2027**, based in Chengdu and planning to relocate to London.
+I build intelligent systems and the software around them: models, GPU kernels, algorithms and interfaces. I'm a final-year **Software Engineering student at Sichuan University**, graduating **June 2027**. I like finding the point where a promising idea meets a real constraint—and working through it.
 
-**[Portfolio & case studies](https://hajarmrifag.github.io/)** · [LinkedIn](https://www.linkedin.com/in/hajar-mrifag-a7903334b/) · [CV](https://hajarmrifag.github.io/assets/Hajar-Mrifag-CV.pdf)
+**[Portfolio](https://hajarmrifag.github.io/)** · **[CV](https://hajarmrifag.github.io/assets/Hajar-Mrifag-CV.pdf)** · [Email](mailto:hajarmrifag2@gmail.com) · [LinkedIn](https://www.linkedin.com/in/hajar-mrifag-a7903334b/)
 
-## Start with the engineering
+## Selected engineering
 
-### [Java Order Book](https://github.com/hajarmrifag/java-order-book)
-<sub>JAVA 21 · ALGORITHMS · JVM</sub>
+<picture>
+  <source media="(max-width: 600px) and (prefers-color-scheme: dark)" srcset="assets/evidence-mobile-dark.svg">
+  <source media="(max-width: 600px)" srcset="assets/evidence-mobile-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/evidence-dark.svg">
+  <img src="assets/evidence-light.svg" width="960" alt="Evidence snapshots: CUDA reaches 1.28 TFLOPS, 24% of cuBLAS on the recorded T4 workload; PolicyLens passes 24 of 31 synthetic evaluation questions, including 0 of 3 partial-evidence cases; Java Order Book checks 60,000 generated commands against a reference model. Details and limitations below.">
+</picture>
 
-Price-time matching with integer ticks, FIFO queues and cancellation without scanning a price level. **60,000 generated commands** checked against an independent reference model. One writer owns the state; JMH exposes batch timing and allocation costs.
+### 01 / GridFlex AI
 
-[Design](https://github.com/hajarmrifag/java-order-book/blob/main/docs/design.md) · [Tests](https://github.com/hajarmrifag/java-order-book/tree/main/src/test/java/dev/hajar/orderbook) · [Measured results](https://github.com/hajarmrifag/java-order-book/blob/main/benchmarks/RESULTS.md)
+**Energy modelling, numerical optimization and a full-stack workspace.** Explore battery dispatch, flexible demand and chronological forecasts. Removing repeated pandas indexing reduced a recorded 60-day shift + battery workload from **71.731 to 2.246 ms**. This measures the engine; the retrospective optimizer uses perfect foresight.
 
-### [CUDA Transformer Kernels](https://github.com/hajarmrifag/cuda-transformer-kernels)
-<sub>C++17 · CUDA · NSIGHT COMPUTE</sub>
+[Code](https://github.com/hajarmrifag/gridflex-ai) · [Live workspace](https://gridflex.onrender.com/) · [Case study](https://hajarmrifag.github.io/work/gridflex.html) · [Benchmark protocol](https://github.com/hajarmrifag/gridflex-ai/tree/main/benchmarks)
 
-**1.28 TFLOPS FP32 GEMM** on a Tesla T4 at 1024 × 1024, about **3.32×** the naive kernel and **24% of cuBLAS**. Register-cached Softmax beat the warp-shuffle experiment at width 2048. The slower experiment stays in the repo because the comparison matters.
+<details>
+<summary>Inside the GridFlex workspace — actual application screenshot</summary>
 
-[Results](https://github.com/hajarmrifag/cuda-transformer-kernels/tree/main/results) · [Optimization decisions](https://github.com/hajarmrifag/cuda-transformer-kernels/blob/main/docs/optimization.md) · [Validation limits](https://github.com/hajarmrifag/cuda-transformer-kernels/blob/main/docs/validation.md)
+![GridFlex: scenario controls, battery settings and an hourly residual-load chart. The displayed scenario is separate from the 60-day engine benchmark.](assets/gridflex-workspace.png)
 
-## From the engine to the product
+</details>
 
-**[GridFlex](https://github.com/hajarmrifag/gridflex-ai)** · React / TypeScript / FastAPI / NumPy<br>
-An energy simulation workspace with physical constraints, dispatch replay and scenario comparison. Removing repeated pandas indexing cut a recorded 60-day pipeline from **71.731 to 2.246 ms**. [Case study](https://hajarmrifag.github.io/work/gridflex.html) · [Live app](https://gridflex.onrender.com/) · [Benchmark](https://github.com/hajarmrifag/gridflex-ai/tree/main/benchmarks)
+### 02 / CUDA Transformer Kernels
 
-**[Neobank](https://github.com/hajarmrifag/neobank-growth-analytics)** · Python / PostgreSQL / SQL<br>
-Atomic transfers, ordered account locks and serialized retry keys, checked with real-database concurrency and rollback tests. A separate analytics pipeline explores **891,772 synthetic transactions**. [Transaction design](https://github.com/hajarmrifag/neobank-growth-analytics/blob/main/docs/banking-api.md) · [Dashboard](https://neobank-growth-analytics-hajar.streamlit.app/)
+**Follow an optimization from memory access to measurement.** FP32 GEMM reaches **1.28 TFLOPS on a Tesla T4 at 1024 × 1024**, about **3.32× the naive kernel and 24% of cuBLAS**. Register-cached Softmax beats the warp-shuffle experiment at width 2048. Historical kernel timings; current GPU validation changes await a GPU rerun.
 
-**[Aegis Claims](https://github.com/hajarmrifag/claims-management-api)** · C# / ASP.NET Core / React<br>
-A claims workflow with API-enforced roles, status history and validated uploads. Layered services make business rules testable; a documented threat model makes remaining risks inspectable. [Security assessment](https://github.com/hajarmrifag/claims-management-api/blob/main/docs/security/assessment-report.md) · [Live app](https://claims-management-ync9.onrender.com/)
+[Kernels](https://github.com/hajarmrifag/cuda-transformer-kernels/tree/main/src) · [Results](https://github.com/hajarmrifag/cuda-transformer-kernels/tree/main/results) · [Validation limits](https://github.com/hajarmrifag/cuda-transformer-kernels/blob/main/docs/validation.md)
 
-<sub>Performance figures describe recorded workloads, not whole-app latency. CUDA's latest validation changes await a GPU rerun. Free-hosted demos may need time to wake.</sub>
+### 03 / PolicyLens AI
 
-## Beyond solo projects
+**When retrieval succeeds and the answer still fails.** A document-Q&A prototype with source passages and refusal checks. Expected evidence appeared in the top three for **15/15** evidence-bearing questions; only **24/31** evaluation cases passed. Partial evidence remains **0/3**. Four synthetic documents; refusal calibration used the same questions.
 
-**Data & AI Engineering Intern, Chengdu Suncaper Data · March–April 2026**<br>
-Backend and data engineering in the two-person [SkyQuery project](https://hajarmrifag.github.io/work/skyquery.html): PySpark/HDFS/Hive analysis over a documented 15M flight records, plus a separate FastAPI/SQLite query prototype. My teammate owned the frontend and contributed analysis.
+[Code](https://github.com/hajarmrifag/policylens-ai) · [Failure analysis](https://github.com/hajarmrifag/policylens-ai/blob/main/docs/evaluation.md) · [Raw results](https://github.com/hajarmrifag/policylens-ai/blob/main/data/evals/results.json)
 
-**[Sourced](https://github.com/hajarmrifag/opportunity-compass) · BUILD ACROSS Hackathon, Hong Kong · October 2026**<br>
-My contribution connected search, comparison and application follow-through, keeping missing evidence visible and user actions explicit. The README separates my work from teammates' responsibilities.
+### 04 / PowerCut
 
-Also exploring [retrieval evaluation with PolicyLens](https://github.com/hajarmrifag/policylens-ai) and [temporal banking research](https://github.com/hajarmrifag/churn-reactivation-engine).
+**Constraint solving you can operate with a TV remote.** A Fire TV / Vega app with an on-device TypeScript solver, independent schedule verification and a Python reference. It explains infeasible backup-power plans and searches for repairs affecting one or two appliances. **231 differential scenarios** check the port; repair optimality is limited to that search scope.
 
-My foundation is Java/OOP, data structures, operating systems, architecture, networking and distributed systems. I enjoy moving between a usable interface and the constraints underneath it.
+[Code & setup](https://github.com/hajarmrifag/powercut) · [Engine port](https://github.com/hajarmrifag/powercut/blob/main/docs/ENGINE_PORT.md) · [Device measurements](https://github.com/hajarmrifag/powercut/blob/main/docs/ENGINE_BENCHMARKS.md)
+
+<details>
+<summary>Inside PowerCut — actual Vega Virtual Device screenshot</summary>
+
+![PowerCut: a synthetic six-appliance plan needs 1,908 Wh against a 1,800 Wh battery budget. The interface identifies the shortfall and offers verified alternatives. This is a planning prototype, not a safety guarantee.](assets/powercut-workspace.png)
+
+</details>
+
+### 05 / Java Order Book
+
+**Price-time priority, with the invariants exposed.** Integer ticks, FIFO queues and cancellation without scanning a price level. **60,000 generated commands** compare behavior with an independent list-based model. One writer owns the in-memory state; JMH records batch timing and allocation costs.
+
+[Matching engine](https://github.com/hajarmrifag/java-order-book) · [Reference-model tests](https://github.com/hajarmrifag/java-order-book/blob/main/src/test/java/dev/hajar/orderbook/ReferenceModelTest.java) · [JMH results](https://github.com/hajarmrifag/java-order-book/blob/main/benchmarks/RESULTS.md)
+
+### 06 / Sourced
+
+**From opportunity search to a considered next step.** At Hong Kong's BUILD ACROSS Hackathon, I built discovery, comparison, browser-local application planning and affordability-scenario UI. Missing evidence stays visible. Teammates owned CV extraction, retrieval and eligibility verification; the README records our contribution boundaries.
+
+[Code & contributions](https://github.com/hajarmrifag/opportunity-compass) · [Architecture](https://github.com/hajarmrifag/opportunity-compass/blob/main/docs/ARCHITECTURE.md)
+
+## Further investigations
+
+- **[Neobank](https://github.com/hajarmrifag/neobank-growth-analytics)** — atomic PostgreSQL transfers and concurrency tests; a separate analytics pipeline over synthetic transactions.
+- **[Forensic Evidence Lab](https://github.com/hajarmrifag/forensic-evidence-lab)** — FAT16 and independently sourced NTFS investigations, byte-level cross-checks and evidence-linked reports.
+- **[Banking disengagement research](https://github.com/hajarmrifag/churn-reactivation-engine)** — temporal evaluation and a 90-day purge; [FinSight](https://github.com/hajarmrifag/finsight-streamlit) makes the results explorable.
+- **[Aegis Claims](https://github.com/hajarmrifag/claims-management-api)** — a React / ASP.NET Core workflow with API-enforced roles, status history and documented security boundaries.
+
+## Research & collaboration
+
+**Data & AI Engineering Intern · Chengdu Suncaper Data · March–April 2026.** In the two-person [SkyQuery project](https://hajarmrifag.github.io/work/skyquery.html), I worked on PySpark/HDFS/Hive analysis over a documented 15M flight records and a separate FastAPI/SQLite query prototype. My teammate owned the frontend and contributed analysis.
+
+**Now:** my AI Study Companion thesis—an adaptive AI tutoring platform and physical robot. Work in progress; implementation and results are not presented here.
+
+I'm interested in **graduate software engineering roles and AI research opportunities**. [Get in touch](mailto:hajarmrifag2@gmail.com).
+
+<sub>Measurements describe their recorded workloads, not general performance guarantees. Free-hosted demos may need time to wake.</sub>
