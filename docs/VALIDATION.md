@@ -44,6 +44,6 @@ The artwork generator uses only Python's standard library. The README itself has
 - Rewrote `README.md`: broader positioning; six selected projects; evidence and limitation links; expandable product screenshots; further investigations; internship ownership; brief thesis status; contact paths.
 - Added eight SVGs: header/evidence × desktop/mobile × light/dark.
 - Added two unchanged public product screenshots.
-- Added `scripts/build_artwork.py` and `scripts/check_profile.py`.
+- Added `scripts/build_artwork.py`, `scripts/check_profile.py` and Python cache exclusions in `.gitignore`.
 - Added this validation record, `PORTFOLIO-REVIEW.md` and `SOURCES.md`.
 - Retained the original `assets/header.svg` and `assets/header-mobile.svg` unchanged. Git history preserves the old README.
