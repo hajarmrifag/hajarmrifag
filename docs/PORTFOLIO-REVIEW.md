@@ -1,6 +1,6 @@
 # Engineering portfolio review
 
-Prepared 28 October 2026. Proposal implemented only on `design/engineering-portfolio-2026`, based on live profile commit `7ab6752666d82bdaa102142d3941cd161a9f1562`. Nothing in this proposal changes the live profile, pins, repository descriptions, visibility or portfolio website.
+Audit prepared 28 October 2026; design finalised 29 October 2026. Implemented only on `design/engineering-portfolio-2026`, based on live profile commit `7ab6752666d82bdaa102142d3941cd161a9f1562`. Nothing in this proposal changes the live profile, pins, repository descriptions, visibility or portfolio website.
 
 ## Audit scope and standard of evidence
 
@@ -22,19 +22,21 @@ The public homepage and GridFlex/SkyQuery case studies supply working routes, co
 
 GridFlex's real workspace image shows the interface and explicit modelling assumptions. PowerCut has extensive Vega Virtual Device screenshot evidence; the selected overview makes both the energy shortfall and model limitations visible. CUDA and PolicyLens already have evidence graphics in their repositories. Aegis and Sourced have useful architecture documentation but no comparable committed product screenshot in the inspected public trees. The forensic lab is strongest as a traceable evidence report, not as a conventional app screenshot.
 
-## Design decisions
+## Design decisions (final, version 2)
 
-**Direction: an engineering folio.** Large serif name, restrained monospaced labels, fine rules and a computational tile illustration. The illustration is explicitly abstract; it does not pretend to encode experimental results. Light and dark artwork are independently authored from the same palette tokens. The charcoal treatment echoes Night Floor without copying its 3D objects or interaction model.
+An earlier abstract-artwork direction was reviewed and rejected as too template-like and too slow to reach the work. The shipped design is evidence-led.
 
-**Opening:** name, AI/systems/product identity, university, June 2027 graduation, location, and portfolio/CV/email/LinkedIn. These remain understandable when images are unavailable because the introduction and alt text repeat essential context.
+**Order and first screen.** The README opens on a name plate (monogram, name, discipline, university) fused to the featured GridFlex panel, so the first project and its real workspace screenshot appear immediately. Portfolio, CV and contact links sit directly beneath it. PowerCut, CUDA Transformer Kernels, PolicyLens, Java Order Book and Sourced follow.
 
-**Evidence before a technology list:** a common-scale CUDA comparison that includes cuBLAS; 31 PolicyLens marks that retain seven failures; and the finite Java reference-model workload. The point is the quality of the experiment, not the largest possible number. Mobile artwork replaces the dense three-column strip with readable stacked summaries.
+**One panel per project, each with its own evidence.** GridFlex and PowerCut embed the unchanged public screenshots. CUDA is zero-origin bars with cuBLAS kept in view. PolicyLens is cell meters that keep the 0/3 partial-evidence failure visible. Java Order Book shows the 40 seeds × 1,500 commands behind the 60,000-command finite regression set. Sourced redraws the product's own flow from its README (unknown stays unknown) and marks which parts I built. Each panel takes an accent from its product's UI and a numbered label; all share the charcoal/brass folio identity.
 
-**Six concise entries:** each connects a real engineering decision to code and evidence. Product screenshots use native `details` disclosure so they can be inspected without stretching the initial page. Native text, links and headings remain selectable and reflow naturally. Other credible work stays in a compact further-investigations list.
+**Copy.** Text outside the panels is limited to verified results, stated limits and evidence links, about a third shorter than the first v2 draft.
 
-**GitHub constraints:** no custom page CSS, scripts, external fonts, widgets or animations in the README. All visuals are repository-local; SVGs have no external dependencies, embedded scripts or foreignObject. Native `picture`, `source`, `img`, `details` and Markdown provide the layout. GitHub's Markdown API retained these elements. Light/dark art remains self-contained and legible even if a client falls back to the light image.
+**GitHub constraints.** No custom page CSS, scripts, external fonts or widgets in the README. Every panel is a native `a` > `picture` > `source`/`img` stack with desktop/mobile and light/dark variants and descriptive alt text. SVGs are self-contained: no scripts, `foreignObject` or external references. The two screenshots are embedded as JPEG data URIs because an SVG shown through `img` cannot load files. Fonts are system stacks. On mobile no text is below 12 px (13 px for almost all).
 
 ## Exactly six proposed pins, in order
+
+The pin order is a separate GitHub setting. The README panels run GridFlex, PowerCut, CUDA, PolicyLens, Java Order Book, Sourced.
 
 | Position | Repository | Why it earns the slot |
 | --- | --- | --- |
@@ -75,4 +77,4 @@ The course fork (`fullstack-course4`), course exercise (`coursera-test`) and cur
 3. If desired, update only the profile repository's About description to `Selected engineering work: AI evaluation, GPU computing, algorithms and full-stack products.` Repository descriptions/topics elsewhere require separate authorization.
 4. To publish the README later, push this design branch, review its complete diff and open a PR into the profile repository's `main`. Approve the rendered branch preview before merging. The special profile repository renders its default-branch README; a local branch does not change the profile.
 
-The current delivery stops at a local branch and preview. No push or PR has been made. Existing README and assets remain recoverable from the base commit; the two original SVG files are also retained unchanged. A future rollback should revert the redesign commit, not rewrite history.
+Publication is through a draft pull request into `main` from `design/engineering-portfolio-2026`, reviewed on its rendered branch before any merge. The profile repository's default-branch README is what visitors see, so nothing is live until the PR is merged. Rollback is a revert PR, never a history rewrite. Existing README and assets remain recoverable from the base commit.
