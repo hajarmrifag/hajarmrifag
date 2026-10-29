@@ -47,3 +47,7 @@ The artwork generator uses only Python's standard library. The README itself has
 - Added `scripts/build_artwork.py`, `scripts/check_profile.py` and Python cache exclusions in `.gitignore`.
 - Added this validation record, `PORTFOLIO-REVIEW.md` and `SOURCES.md`.
 - Retained the original `assets/header.svg` and `assets/header-mobile.svg` unchanged. Git history preserves the old README.
+
+## Version 2 (29 October 2026)
+
+Layout rebuilt around real product evidence: GridFlex opens the README, followed by PowerCut, CUDA, PolicyLens, Java Order Book and Sourced, each as a themed `<picture>` panel (desktop/mobile × light/dark). GridFlex and PowerCut panels embed the unchanged public screenshots (cropped/resized, JPEG data URIs in `scripts/src/`). All plotted numbers come from the recorded results already cited; `≈32×` is 71.731 ÷ 2.246. Rendered with headless Chrome from GitHub-API-rendered Markdown (`docs/preview-v2/`). The light-theme previews drop the dark `<source>` elements because a local browser follows the OS scheme, not GitHub's theme setting. Not yet checked on github.com itself. Rebuild: `python3 scripts/build_artwork.py && python3 scripts/check_profile.py`. The v1 files are backed up outside the repo at `../v1-backup/`; `header*` and `evidence*` SVGs are now unreferenced.
